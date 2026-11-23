@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.º ESO English · Unit 2 Practice &amp; Printable Worksheet</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #0d9488;
+      --accent-light: #f0fdfa;
+      --success: #15803d;
+      --success-bg: #f0fdf4;
+      --success-border: #86efac;
+      --warning: #b45309;
+      --warning-bg: #fffbeb;
+      --warning-border: #fcd34d;
+      --error: #b91c1c;
+      --error-bg: #fef2f2;
+      --error-border: #fca5a5;
+      --radius: 12px;
+      --shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print Header (Screen Hidden) */
+    .print-only-header {
+      display: none;
+    }
+
+    /* Sticky Top Navigation Bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .top-bar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 16px;
+    }
+
+    .top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .brand-badge {
+      background: var(--primary);
+      color: #fff;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .student-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .timer-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .timer-box.time-up {
+      background: var(--warning-bg);
+      border-color: var(--warning-border);
+      color: var(--warning);
+    }
+
+    .timer-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .timer-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Progress Bar */
+    .progress-wrap {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 8px;
+      background: var(--border-light);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.25s ease;
+    }
+
+    .progress-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 8px 0 2px;
+      scrollbar-width: thin;
+    }
+
+    .nav-tab {
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text-muted);
+      border-radius: 8px;
+      padding: 6px 11px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .nav-tab:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .nav-tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-tab.done-ok {
+      border-color: var(--success-border);
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .nav-tab.done-ok.active {
+      background: var(--success);
+      color: #fff;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 960px;
+      margin: 20px auto 48px;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Welcome Screen */
+    .welcome-hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .welcome-hero h1 {
+      font-size: 1.75rem;
+      margin: 10px 0 12px;
+      line-height: 1.25;
+    }
+
+    .welcome-hero p {
+      color: var(--text-muted);
+      margin: 0 0 20px;
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      text-align: left;
+      margin: 20px 0 24px;
+    }
+
+    .plan-item {
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+
+    .plan-item strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .plan-item span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .name-input-group {
+      max-width: 420px;
+      margin: 0 auto 22px;
+      text-align: left;
+    }
+
+    .name-input-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+    }
+
+    /* Block Header */
+    .block-header {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .block-title {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+    }
+
+    .block-desc {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .time-pill {
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid #99f6e4;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Word Bank */
+    .word-bank {
+      background: var(--primary-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+
+    .word-bank-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .word-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .word-chip {
+      background: var(--surface);
+      border: 1px solid #93c5fd;
+      color: var(--text);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+
+    .word-chip.clickable {
+      cursor: pointer;
+    }
+
+    .word-chip.clickable:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .word-chip.used {
+      opacity: 0.45;
+      text-decoration: line-through;
+    }
+
+    /* Question Items */
+    .question-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .q-item {
+      border: 1.5px solid var(--border-light);
+      background: var(--surface-alt);
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .q-item.is-correct {
+      border-color: var(--success-border);
+      background: var(--success-bg);
+    }
+
+    .q-item.is-partial {
+      border-color: var(--warning-border);
+      background: var(--warning-bg);
+    }
+
+    .q-item.is-wrong {
+      border-color: var(--error-border);
+      background: var(--error-bg);
+    }
+
+    .q-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .q-text {
+      flex: 1 1 320px;
+      font-size: 1rem;
+    }
+
+    .q-num {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-right: 6px;
+    }
+
+    select.q-select {
+      padding: 9px 12px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      min-width: 185px;
+      min-height: 42px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    select.q-select.inline-select {
+      min-width: 155px;
+      padding: 5px 10px;
+      min-height: 36px;
+      margin: 2px 4px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    select.q-select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .inline-input {
+      padding: 8px 12px;
+      font-size: 0.98rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      min-width: 200px;
+      min-height: 42px;
+      font-family: inherit;
+    }
+
+    .inline-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .full-input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px 13px;
+      font-size: 0.98rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      min-height: 44px;
+      font-family: inherit;
+    }
+
+    .full-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    /* Radio / Pill Choices */
+    .choice-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .choice-pill {
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      min-height: 40px;
+      transition: all 0.15s;
+    }
+
+    .choice-pill:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .choice-pill.selected {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Sub-heading */
+    .sub-heading {
+      margin: 24px 0 12px;
+      padding: 8px 12px;
+      background: var(--surface-alt);
+      border-left: 4px solid var(--primary);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Cloze Passage */
+    .cloze-passage {
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 1.04rem;
+      line-height: 2.05;
+    }
+
+    .cloze-passage p {
+      margin: 0 0 16px;
+    }
+
+    .cloze-passage p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cloze-gap-num {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+    }
+
+    select.cloze-select {
+      min-width: 115px;
+      min-height: 36px;
+      padding: 4px 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      background: var(--surface);
+      color: var(--text);
+      margin: 0 3px;
+      cursor: pointer;
+    }
+
+    select.cloze-select.is-correct {
+      border-color: var(--success);
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    select.cloze-select.is-wrong {
+      border-color: var(--error);
+      background: var(--error-bg);
+      color: var(--error);
+    }
+
+    /* Feedback Messages */
+    .feedback-msg {
+      margin-top: 9px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 11px;
+      border-radius: 7px;
+      display: none;
+    }
+
+    .feedback-msg.show {
+      display: block;
+    }
+
+    .feedback-msg.ok {
+      background: rgba(22, 163, 74, 0.12);
+      color: var(--success);
+    }
+
+    .feedback-msg.warn {
+      background: rgba(217, 119, 6, 0.14);
+      color: var(--warning);
+    }
+
+    .feedback-msg.err {
+      background: rgba(220, 38, 38, 0.11);
+      color: var(--error);
+    }
+
+    .block-banner {
+      margin-top: 18px;
+      padding: 13px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.96rem;
+      display: none;
+    }
+
+    .block-banner.show {
+      display: block;
+    }
+
+    .block-banner.good {
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      color: var(--success);
+    }
+
+    .block-banner.mixed {
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      color: var(--warning);
+    }
+
+    /* Action Buttons */
+    .actions-bar {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 9px;
+      padding: 11px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 44px;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background-color 0.15s, transform 0.05s;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-success {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background: #0f766e;
+    }
+
+    .btn-warning {
+      background: #f59e0b;
+      color: #ffffff;
+    }
+
+    .btn-warning:hover {
+      background: #d97706;
+    }
+
+    .btn-outline {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .btn-print {
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    .btn-print:hover {
+      background: #334155;
+    }
+
+    /* Results Screen */
+    .score-hero {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      margin-bottom: 22px;
+    }
+
+    .score-big {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.1;
+      margin: 6px 0;
+    }
+
+    .score-sub {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px;
+      font-size: 0.95rem;
+    }
+
+    .summary-table th,
+    .summary-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+    }
+
+    .summary-table th {
+      background: var(--surface-alt);
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .status-badge.ok {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .status-badge.warn {
+      background: var(--warning-bg);
+      color: var(--warning);
+    }
+
+    .status-badge.pending {
+      background: var(--surface-alt);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    /* Interactive Placeholders for Print mode */
+    .print-line-inline {
+      display: none;
+    }
+    .print-line-full {
+      display: none;
+    }
+
+    /* Screen Responsiveness */
+    @media (max-width: 640px) {
+      .card {
+        padding: 16px;
+      }
+      .welcome-hero h1 {
+        font-size: 1.4rem;
+      }
+      select.q-select,
+      .inline-input {
+        width: 100%;
+      }
+      .actions-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-group {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+      .summary-table th:nth-child(2),
+      .summary-table td:nth-child(2) {
+        display: none;
+      }
+    }
+
+    /* =========================================================================
+       PRINT BACKUP STYLES (@media print)
+       Clean, paper-optimized layout for offline printed worksheets
+       ========================================================================= */
+    @media print {
+      @page {
+        margin: 1.2cm 1.5cm;
+        size: A4 portrait;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Hide interactive headers, navigation, buttons, popups */
+      .top-bar,
+      .actions-bar,
+      .feedback-msg,
+      .block-banner,
+      .time-pill,
+      .timer-btn,
+      #welcome-screen,
+      #results-screen {
+        display: none !important;
+      }
+
+      /* Unhide all block cards in printable sequence */
+      .card {
+        display: block !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 24pt !important;
+        background: transparent !important;
+      }
+
+      .card:not(:first-of-type) {
+        page-break-before: auto;
+      }
+
+      #block-1, #block-2, #block-3, #block-4, #block-5 {
+        page-break-inside: avoid;
+      }
+
+      /* Show printable header with lines for student info */
+      .print-only-header {
+        display: block !important;
+        border-bottom: 2px solid #000;
+        padding-bottom: 8pt;
+        margin-bottom: 16pt;
+      }
+
+      .print-header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14pt;
+        font-weight: bold;
+      }
+
+      .print-header-fields {
+        display: flex;
+        gap: 20pt;
+        margin-top: 10pt;
+        font-size: 11pt;
+      }
+
+      .print-header-fields div {
+        flex: 1;
+      }
+
+      .print-field-line {
+        display: inline-block;
+        border-bottom: 1px solid #000;
+        min-width: 120pt;
+        height: 12pt;
+      }
+
+      /* Clean block titles & instructions */
+      .block-header {
+        border-bottom: 1px solid #000 !important;
+        padding-bottom: 4pt !important;
+        margin-bottom: 10pt !important;
+      }
+
+      .block-title {
+        font-size: 13pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+      }
+
+      .block-desc {
+        font-size: 10pt !important;
+        color: #333 !important;
+      }
+
+      /* Word banks in print mode */
+      .word-bank {
+        background: #f8f8f8 !important;
+        border: 1px solid #ccc !important;
+        border-radius: 4px !important;
+        padding: 6pt 8pt !important;
+        margin-bottom: 10pt !important;
+      }
+
+      .word-bank-title {
+        color: #000 !important;
+        font-size: 9pt !important;
+      }
+
+      .word-chip {
+        background: #fff !important;
+        border: 1px solid #888 !important;
+        color: #000 !important;
+        font-size: 9.5pt !important;
+        padding: 2pt 6pt !important;
+        opacity: 1 !important;
+        text-decoration: none !important;
+      }
+
+      /* Question items in print mode */
+      .question-list {
+        gap: 8pt !important;
+      }
+
+      .q-item {
+        border: none !important;
+        background: transparent !important;
+        padding: 4pt 0 !important;
+        page-break-inside: avoid;
+      }
+
+      .q-text {
+        font-size: 11pt !important;
+      }
+
+      .q-num {
+        color: #000 !important;
+      }
+
+      /* Replace interactive controls with printable lines */
+      select.q-select,
+      .inline-input,
+      .full-input,
+      .choice-group,
+      select.cloze-select {
+        display: none !important;
+      }
+
+      .print-line-inline {
+        display: inline-block !important;
+        border-bottom: 1px solid #000;
+        min-width: 140pt;
+        margin: 0 4pt;
+        vertical-align: bottom;
+      }
+
+      .print-line-full {
+        display: block !important;
+        border-bottom: 1px solid #000;
+        width: 100%;
+        height: 22pt;
+        margin-top: 6pt;
+      }
+
+      .print-line-full-double {
+        display: block !important;
+        border-bottom: 1px solid #000;
+        width: 100%;
+        height: 22pt;
+        margin-top: 6pt;
+      }
+
+      .choice-options-print {
+        display: inline-block !important;
+        font-style: italic;
+        margin-left: 6pt;
+        font-weight: bold;
+      }
+
+      .sub-heading {
+        background: none !important;
+        border-left: 3px solid #000 !important;
+        color: #000 !important;
+        font-size: 11pt !important;
+        padding: 2pt 6pt !important;
+        margin: 12pt 0 6pt !important;
+      }
+
+      .cloze-passage {
+        background: #fff !important;
+        border: 1px solid #aaa !important;
+        padding: 12pt !important;
+        font-size: 11pt !important;
+        line-height: 2.3 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Printable Header (Visible only when printed via window.print) -->
+  <div class="print-only-header">
+    <div class="print-header-top">
+      <span>4.º ESO ENGLISH · UNIT 2 PRACTICE WORKSHEET</span>
+      <span>Mark: _____ / 56</span>
+    </div>
+    <div style="font-size: 10pt; color: #444; margin-top: 2pt;">
+      Vocabulary (Sensory, Life &amp; Culture) &amp; Grammar (Relative Pronouns &amp; Relative Clauses)
+    </div>
+    <div class="print-header-fields">
+      <div>Name: <span class="print-field-line" style="min-width: 220pt;"></span></div>
+      <div>Class: <span class="print-field-line" style="min-width: 70pt;"></span></div>
+      <div>Date: <span class="print-field-line" style="min-width: 90pt;"></span></div>
+    </div>
+  </div>
+
+  <!-- Sticky Top Header (Interactive mode) -->
+  <header class="top-bar hidden" id="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-row">
+        <div class="brand">
+          <span class="brand-badge">4.º ESO · UNIT 2</span>
+          <span>Vocabulary &amp; Grammar Lab</span>
+          <span class="student-tag" id="header-student-name"></span>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" class="btn btn-print" style="min-height: 34px; padding: 4px 12px; font-size: 0.85rem;" onclick="window.print()">
+            🖨️ Imprimir
+          </button>
+          <div class="timer-box" id="timer-box">
+            <span>⏱ <span id="timer-display">40:00</span></span>
+            <button type="button" class="timer-btn" id="timer-toggle-btn">Pausar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-track" aria-label="Progreso de la actividad">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-label" id="progress-label">0 / 52 (0%)</span>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Bloques de ejercicios">
+        <button type="button" class="nav-tab active" data-target="block-1" id="tab-block-1">1. Definiciones (5')</button>
+        <button type="button" class="nav-tab" data-target="block-2" id="tab-block-2">2. Contexto (7')</button>
+        <button type="button" class="nav-tab" data-target="block-3" id="tab-block-3">3. Corregir uso (6')</button>
+        <button type="button" class="nav-tab" data-target="block-4" id="tab-block-4">4. Relative Clauses (12')</button>
+        <button type="button" class="nav-tab" data-target="block-5" id="tab-block-5">5. Texto (7')</button>
+        <button type="button" class="nav-tab" data-target="results-screen" id="tab-results">Resultados</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- WELCOME SCREEN -->
+    <section class="card" id="welcome-screen">
+      <div class="welcome-hero">
+        <span class="brand-badge">4.º ESO · INGLÉS · REPASO DE UNIDAD</span>
+        <h1>Práctica digital e imprimible: Cultura, sentidos y oraciones de relativo</h1>
+        <p>
+          Completa los 5 bloques interactivos en unos 40 minutos o imprime la versión de respaldo en papel.
+          Puedes comprobar tus respuestas, recibir explicaciones breves y volver a intentar tus fallos.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <button type="button" class="btn btn-print" onclick="window.print()">
+            🖨️ Imprimir o guardar las actividades (PDF / Papel)
+          </button>
+        </div>
+
+        <div class="plan-grid">
+          <div class="plan-item">
+            <strong>Bloque 1 · ~5 min (10 pts)</strong>
+            <span>Relacionar 10 palabras clave con sus definiciones en inglés.</span>
+          </div>
+          <div class="plan-item">
+            <strong>Bloque 2 · ~7 min (12 pts)</strong>
+            <span>Completar 12 oraciones originales con vocabulario en contexto.</span>
+          </div>
+          <div class="plan-item">
+            <strong>Bloque 3 · ~6 min (8 pts)</strong>
+            <span>Detectar y corregir 8 palabras usadas en un contexto equivocado.</span>
+          </div>
+          <div class="plan-item">
+            <strong>Bloque 4 · ~12 min (16 pts)</strong>
+            <span>Elegir pronombres relativos, corregir errores y unir oraciones.</span>
+          </div>
+          <div class="plan-item">
+            <strong>Bloque 5 · ~7 min (10 pts)</strong>
+            <span>Completar un texto original sobre gastronomía y cultura con relativos.</span>
+          </div>
+          <div class="plan-item">
+            <strong>Duración orientativa · 40 min</strong>
+            <span>Temporizador pausable que no bloquea la actividad al llegar a cero.</span>
+          </div>
+        </div>
+
+        <div class="name-input-group">
+          <label for="student-name-input">Nombre o iniciales (opcional · solo se guarda en este dispositivo)</label>
+          <input type="text" id="student-name-input" class="text-input" placeholder="Ej.: Lucía M. · 4.º B" maxlength="40" />
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary" id="start-btn" style="padding: 13px 28px; font-size: 1.05rem;">
+            Comenzar práctica interactiva (40 min) →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 1 -->
+    <section class="card hidden" id="block-1">
+      <div class="block-header">
+        <div>
+          <h2 class="block-title">Block 1 · Vocabulary &amp; Definitions</h2>
+          <p class="block-desc">Match each definition with the correct word from the word bank.</p>
+        </div>
+        <span class="time-pill">⏱ ~5 min · 10 pts</span>
+      </div>
+
+      <div class="word-bank">
+        <div class="word-bank-title">Word Bank (10 words)</div>
+        <div class="word-chips" id="b1-bank"></div>
+      </div>
+
+      <div class="question-list" id="b1-questions"></div>
+      <div class="block-banner" id="b1-banner"></div>
+
+      <div class="actions-bar">
+        <div class="btn-group">
+          <button type="button" class="btn btn-success" onclick="checkBlock(1)">Comprobar Bloque 1</button>
+          <button type="button" class="btn btn-warning hidden" id="b1-retry" onclick="retryBlock(1)">Reintentar incorrectas</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" onclick="goToView('block-2')">Siguiente bloque →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 2 -->
+    <section class="card hidden" id="block-2">
+      <div class="block-header">
+        <div>
+          <h2 class="block-title">Block 2 · Vocabulary in Context</h2>
+          <p class="block-desc">Choose the most appropriate word or phrase to complete each original sentence.</p>
+        </div>
+        <span class="time-pill">⏱ ~7 min · 12 pts</span>
+      </div>
+
+      <div class="word-bank">
+        <div class="word-bank-title">Word Bank (12 items)</div>
+        <div class="word-chips" id="b2-bank"></div>
+      </div>
+
+      <div class="question-list" id="b2-questions"></div>
+      <div class="block-banner" id="b2-banner"></div>
+
+      <div class="actions-bar">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline" onclick="goToView('block-1')">← Anterior</button>
+          <button type="button" class="btn btn-success" onclick="checkBlock(2)">Comprobar Bloque 2</button>
+          <button type="button" class="btn btn-warning hidden" id="b2-retry" onclick="retryBlock(2)">Reintentar incorrectas</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" onclick="goToView('block-3')">Siguiente bloque →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 3 -->
+    <section class="card hidden" id="block-3">
+      <div class="block-header">
+        <div>
+          <h2 class="block-title">Block 3 · Spot &amp; Fix Misused Vocabulary</h2>
+          <p class="block-desc">The word in <strong>bold</strong> is used incorrectly. Write the correct replacement word from the bank.</p>
+        </div>
+        <span class="time-pill">⏱ ~6 min · 8 pts</span>
+      </div>
+
+      <div class="word-bank">
+        <div class="word-bank-title">Replacement Words (tap to insert into active input)</div>
+        <div class="word-chips" id="b3-bank"></div>
+      </div>
+
+      <div class="question-list" id="b3-questions"></div>
+      <div class="block-banner" id="b3-banner"></div>
+
+      <div class="actions-bar">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline" onclick="goToView('block-2')">← Anterior</button>
+          <button type="button" class="btn btn-success" onclick="checkBlock(3)">Comprobar Bloque 3</button>
+          <button type="button" class="btn btn-warning hidden" id="b3-retry" onclick="retryBlock(3)">Reintentar incorrectas</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" onclick="goToView('block-4')">Siguiente bloque →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 4 -->
+    <section class="card hidden" id="block-4">
+      <div class="block-header">
+        <div>
+          <h2 class="block-title">Block 4 · Relative Pronouns &amp; Relative Clauses</h2>
+          <p class="block-desc">Practice relative pronouns (<em>who, which, whose, where, when</em>), error correction, and combining sentences (defining &amp; non-defining).</p>
+        </div>
+        <span class="time-pill">⏱ ~12 min · 16 pts</span>
+      </div>
+
+      <div id="b4-container"></div>
+      <div class="block-banner" id="b4-banner"></div>
+
+      <div class="actions-bar">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline" onclick="goToView('block-3')">← Anterior</button>
+          <button type="button" class="btn btn-success" onclick="checkBlock(4)">Comprobar Bloque 4</button>
+          <button type="button" class="btn btn-warning hidden" id="b4-retry" onclick="retryBlock(4)">Reintentar incorrectas</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" onclick="goToView('block-5')">Siguiente bloque →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 5 -->
+    <section class="card hidden" id="block-5">
+      <div class="block-header">
+        <div>
+          <h2 class="block-title">Block 5 · Complete the Text with Relative Pronouns</h2>
+          <p class="block-desc">Read this text about a youth culinary exchange and complete each gap with <em>who, which, whose, where</em> or <em>when</em>.</p>
+        </div>
+        <span class="time-pill">⏱ ~7 min · 10 pts</span>
+      </div>
+
+      <div class="cloze-passage" id="b5-passage"></div>
+      <div class="question-list" id="b5-feedback-list" style="margin-top: 16px;"></div>
+      <div class="block-banner" id="b5-banner"></div>
+
+      <div class="actions-bar">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline" onclick="goToView('block-4')">← Anterior</button>
+          <button type="button" class="btn btn-success" onclick="checkBlock(5)">Comprobar Bloque 5</button>
+          <button type="button" class="btn btn-warning hidden" id="b5-retry" onclick="retryBlock(5)">Reintentar incorrectas</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" onclick="goToView('results-screen')">Ver resultados finales →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SCREEN -->
+    <section class="card hidden" id="results-screen">
+      <div class="score-hero">
+        <div id="results-student" style="font-weight: 700; color: var(--primary-dark);"></div>
+        <div class="score-big" id="results-grade">0,0 / 10</div>
+        <div class="score-sub" id="results-points">0 / 56 puntos · 0% de acierto</div>
+        <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);" id="results-time"></div>
+      </div>
+
+      <h3 style="margin: 0 0 8px;">Resumen por bloques</h3>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Bloque</th>
+            <th>Tiempo est.</th>
+            <th>Estado</th>
+            <th>Puntuación</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="results-tbody"></tbody>
+      </table>
+
+      <div class="actions-bar">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline" onclick="goToView('block-5')">← Volver al Bloque 5</button>
+          <button type="button" class="btn btn-print" onclick="window.print()">
+            🖨️ Imprimir o guardar las actividades
+          </button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline" onclick="resetAll()">Reiniciar práctica completa</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // =========================================================================
+    // DATA BANK (Original Content for 4.º ESO Unit 2)
+    // =========================================================================
+
+    const BLOCK1_DATA = [
+      { id: "b1_1", def: "make someone laugh by gently touching a sensitive part of their body", ans: "tickle", hint: "A physical action causing laughter." },
+      { id: "b1_2", def: "gradually adjust your habits or behaviour to suit new conditions", ans: "adapt", hint: "Changing how you live in a new place." },
+      { id: "b1_3", def: "have a very strong, unpleasant smell", ans: "stink", hint: "Opposite of smelling fresh." },
+      { id: "b1_4", def: "the official line separating two countries or regions", ans: "border", hint: "Checked at passport control." },
+      { id: "b1_5", def: "the particular taste you notice when you eat or drink something", ans: "flavour", hint: "Sweet, salty, spicy, etc." },
+      { id: "b1_6", def: "the outward look of a person, object or place", ans: "appearance", hint: "Related to how someone looks." },
+      { id: "b1_7", def: "a person's social, cultural and family history", ans: "background", hint: "Education, family and cultural origin." },
+      { id: "b1_8", def: "spoiled, decayed and no longer safe to eat", ans: "rotten", hint: "Food that has gone bad." },
+      { id: "b1_9", def: "the regular rhythm or pulse of a piece of music", ans: "beat", hint: "The rhythm you dance to." },
+      { id: "b1_10", def: "someone who lives and works outside their native country", ans: "expat", hint: "Short for expatriate." }
+    ];
+
+    const BLOCK1_WORDS = [
+      "adapt", "appearance", "background", "beat", "border",
+      "expat", "flavour", "rotten", "stink", "tickle"
+    ];
+
+    const BLOCK2_DATA = [
+      { id: "b2_1", before: "Please ", after: " if you need to say something during the theatre performance.", ans: "whisper", explain: "'Whisper' means to speak very quietly using quiet breath." },
+      { id: "b2_2", before: "My cousin designed a geometric ", after: " for our robotics club's new hoodies.", ans: "pattern", explain: "A 'pattern' is a repeated decorative design." },
+      { id: "b2_3", before: "It is impolite to ", after: " at strangers on the bus, even if their hairstyle is unusual.", ans: "stare", explain: "'Stare' means to look fixedly for a long time." },
+      { id: "b2_4", before: "Turn the volume up a little; the narrator's voice in this podcast is too ", after: " to hear clearly.", ans: "soft", explain: "'Soft' here means quiet or low in sound." },
+      { id: "b2_5", before: "Summer exchange camps are a great way to ", after: " teenagers from other regions.", ans: "get to know", explain: "'Get to know' means spend time to become familiar with someone." },
+      { id: "b2_6", before: "After studying in Montreal for four years, Javier became ", after: " in both French and English.", ans: "fluent", explain: "'Fluent' means speaking a language easily and accurately." },
+      { id: "b2_7", before: "She polished her silver boots until they looked bright and ", after: " under the stage lights.", ans: "shiny", explain: "'Shiny' reflects light brightly." },
+      { id: "b2_8", before: "After years of moving from city to city, my aunt finally decided to ", after: " in Valencia.", ans: "settle down", explain: "'Settle down' means live a permanent life in one place." },
+      { id: "b2_9", before: "Trying unfamiliar dishes and learning local customs really help us ", after: ".", ans: "expand our horizons", explain: "'Expand our horizons' means broaden our worldview and experiences." },
+      { id: "b2_10", before: "We hired an ", after: " mountain guide who knew every trail in the Pyrenees.", ans: "experienced", explain: "'Experienced' means skilled through past experience." },
+      { id: "b2_11", before: "The warm ", after: " of roasted coffee and cinnamon filled the bakery early in the morning.", ans: "scent", explain: "'Scent' refers to a pleasant aroma." },
+      { id: "b2_12", before: "After climbing rocks all afternoon without gloves, his palms felt dry and ", after: ".", ans: "rough", explain: "'Rough' describes an uneven texture (opposite of smooth)." }
+    ];
+
+    const BLOCK2_WORDS = [
+      "experienced", "expand our horizons", "fluent", "get to know",
+      "pattern", "rough", "scent", "settle down",
+      "shiny", "soft", "stare", "whisper"
+    ];
+
+    const BLOCK3_DATA = [
+      { id: "b3_1", sentence: "The silk scarf felt so <strong>stressful</strong> against her skin that she wore it all winter.", wrong: "stressful", ans: "smooth", explain: "Silk is soft and even, so 'smooth' is the correct texture." },
+      { id: "b3_2", sentence: "Moving to a new city without knowing anyone can feel quite <strong>shiny</strong> during the first few weeks.", wrong: "shiny", ans: "lonely", explain: "Being alone without friends makes one feel 'lonely'." },
+      { id: "b3_3", sentence: "Don't drink that carton of milk—it expired last week and has started to <strong>adapt</strong>.", wrong: "adapt", ans: "stink", explain: "Expired milk smells bad, so it starts to 'stink'." },
+      { id: "b3_4", sentence: "Studying abroad is only a <strong>rough</strong> arrangement; I am staying in Dublin for three months.", wrong: "rough", ans: "temporary", explain: "A short-term plan for 3 months is 'temporary'." },
+      { id: "b3_5", sentence: "Preparing for four final exams in two days can be extremely <strong>smooth</strong> for students.", wrong: "smooth", ans: "stressful", explain: "Heavy exam pressure is 'stressful'." },
+      { id: "b3_6", sentence: "From the top of the hill, we enjoyed a <strong>lonely</strong> view of the entire coastline at sunset.", wrong: "lonely", ans: "gorgeous", explain: "A beautiful view is 'gorgeous'." },
+      { id: "b3_7", sentence: "Learning a <strong>stink</strong> takes patience, regular practice and a willingness to make mistakes.", wrong: "stink", ans: "foreign language", explain: "Requires practice and patience: 'foreign language'." },
+      { id: "b3_8", sentence: "It took our exchange student two weeks to <strong>gorgeous</strong> to the later dinner times in Spain.", wrong: "gorgeous", ans: "adapt", explain: "Verb meaning to adjust: 'adapt'." }
+    ];
+
+    const BLOCK3_WORDS = [
+      "adapt", "foreign language", "gorgeous", "lonely",
+      "smooth", "stink", "stressful", "temporary"
+    ];
+
+    const BLOCK4_DATA = {
+      partA: [
+        { id: "b4_1", text: "The street market _______ we bought those handmade spices is only open on Saturdays.", options: ["who", "which", "whose", "where", "when"], ans: "where", explain: "'Where' refers to a place ('street market')." },
+        { id: "b4_2", text: "I admire designers _______ work combines traditional crafts with modern technology.", options: ["who", "which", "whose", "where", "when"], ans: "whose", explain: "'Whose' indicates possession ('designers' work')." },
+        { id: "b4_3", text: "Summer is the season _______ most outdoor cultural festivals take place in our region.", options: ["who", "which", "whose", "where", "when"], ans: "when", explain: "'When' refers to time ('season')." },
+        { id: "b4_4", text: "The documentary _______ won the audience prize explores life on a remote island.", options: ["who", "which", "whose", "where", "when"], ans: "which", explain: "'Which' refers to a thing ('documentary')." }
+      ],
+      partB: [
+        { id: "b4_5", text: "The chef <strong>which</strong> created this fusion menu trained in both Tokyo and Madrid.", ans: "who", explain: "Use 'who' for a person ('chef')." },
+        { id: "b4_6", text: "We visited a coastal village <strong>who</strong> wooden boats are still built by hand.", ans: "whose", explain: "Possessive relative 'whose' ('village's boats')." },
+        { id: "b4_7", text: "October was the month <strong>where</strong> our school hosted the international exchange week.", ans: "when", explain: "'October' refers to time, so use 'when'." },
+        { id: "b4_8", text: "The museum <strong>whose</strong> displays ancient musical instruments is closed on Mondays.", ans: "which", explain: "'Museum' is the subject of 'displays', so use 'which'." }
+      ],
+      partC: [
+        {
+          id: "b4_9",
+          type: "defining",
+          prompt: "That is the neighbour. Her dog always barks at the postman. <strong>(whose)</strong>",
+          answers: [
+            "That is the neighbour whose dog always barks at the postman.",
+            "That's the neighbour whose dog always barks at the postman."
+          ],
+          model: "That is the neighbour whose dog always barks at the postman.",
+          explain: "Defining clause: replace 'Her' with 'whose'. No commas needed."
+        },
+        {
+          id: "b4_10",
+          type: "defining",
+          prompt: "We toured the studio. Our favourite podcast is recorded there. <strong>(where)</strong>",
+          answers: [
+            "We toured the studio where our favourite podcast is recorded."
+          ],
+          model: "We toured the studio where our favourite podcast is recorded.",
+          explain: "Defining clause: use 'where' for place and omit 'there'. No commas."
+        },
+        {
+          id: "b4_11",
+          type: "non-defining",
+          prompt: "My brother Oliver lives in Edinburgh. He works as a sound engineer. <strong>(who)</strong>",
+          answers: [
+            "My brother Oliver, who works as a sound engineer, lives in Edinburgh.",
+            "My brother Oliver, who lives in Edinburgh, works as a sound engineer."
+          ],
+          model: "My brother Oliver, who works as a sound engineer, lives in Edinburgh.",
+          explain: "Non-defining clause: extra info goes between commas."
+        },
+        {
+          id: "b4_12",
+          type: "non-defining",
+          prompt: "The Alhambra attracts millions of visitors every year. It is located in Granada. <strong>(which)</strong>",
+          answers: [
+            "The Alhambra, which is located in Granada, attracts millions of visitors every year.",
+            "The Alhambra, which attracts millions of visitors every year, is located in Granada."
+          ],
+          model: "The Alhambra, which is located in Granada, attracts millions of visitors every year.",
+          explain: "Non-defining clause: 'The Alhambra' is unique, so use 'which' enclosed in commas."
+        }
+      ]
+    };
+
+    const BLOCK5_GAPS = [
+      { id: "b5_1", ans: "which", explain: "1. 'which' — Non-defining clause referring to 'Flavours Without Borders'." },
+      { id: "b5_2", ans: "where", explain: "2. 'where' — Refers to place ('Rotterdam')." },
+      { id: "b5_3", ans: "when", explain: "3. 'when' — Refers to time ('On the first morning')." },
+      { id: "b5_4", ans: "whose", explain: "4. 'whose' — Expresses possession ('Nadia's grandmother')." },
+      { id: "b5_5", ans: "which", explain: "5. 'which' — Defining clause for a thing ('a dish')." },
+      { id: "b5_6", ans: "who", explain: "6. 'who' — Non-defining clause for a person ('Chef Mateo')." },
+      { id: "b5_7", ans: "where", explain: "7. 'where' — Refers to place ('kitchens')." },
+      { id: "b5_8", ans: "when", explain: "8. 'when' — Refers to time ('By Friday')." },
+      { id: "b5_9", ans: "who", explain: "9. 'who' — Defining clause for people ('Everyone')." },
+      { id: "b5_10", ans: "which", explain: "10. 'which' — Defining clause for a thing ('a universal language')." }
+    ];
+
+    const RELATIVE_OPTIONS = ["who", "which", "whose", "where", "when"];
+
+    // =========================================================================
+    // STATE & APP ENGINE
+    // =========================================================================
+
+    const state = {
+      studentName: "",
+      currentView: "welcome-screen",
+      timerSeconds: 40 * 60,
+      timerRunning: false,
+      timerInterval: null,
+      timeUpNotified: false,
+      activeB3InputId: "b3_1",
+      answers: {},
+      evaluations: {},
+      blockChecked: { 1: false, 2: false, 3: false, 4: false, 5: false }
+    };
+
+    const TOTAL_QUESTIONS = 52;
+    const MAX_POINTS = 56;
+
+    function initApp() {
+      renderBlock1();
+      renderBlock2();
+      renderBlock3();
+      renderBlock4();
+      renderBlock5();
+      setupNavigation();
+      updateProgress();
+    }
+
+    function renderBlock1() {
+      const bankEl = document.getElementById("b1-bank");
+      bankEl.innerHTML = BLOCK1_WORDS.map(w => `<span class="word-chip" id="b1-chip-${slugify(w)}">${w}</span>`).join("");
+
+      const listEl = document.getElementById("b1-questions");
+      listEl.innerHTML = BLOCK1_DATA.map((item, idx) => `
+        <div class="q-item" id="card-${item.id}">
+          <div class="q-row">
+            <div class="q-text">
+              <span class="q-num">${idx + 1}.</span> ${item.def}
+              <span class="print-line-inline"></span>
+            </div>
+            <select class="q-select" id="input-${item.id}" aria-label="Pregunta ${idx + 1}">
+              <option value="">-- Choose a word --</option>
+              ${BLOCK1_WORDS.map(w => `<option value="${w}">${w}</option>`).join("")}
+            </select>
+          </div>
+          <div class="feedback-msg" id="fb-${item.id}"></div>
+        </div>
+      `).join("");
+
+      BLOCK1_DATA.forEach(item => {
+        const sel = document.getElementById(`input-${item.id}`);
+        sel.addEventListener("change", () => {
+          state.answers[item.id] = sel.value;
+          clearQuestionEvaluation(item.id, 1);
+          updateBlock1Chips();
+          updateProgress();
+        });
+      });
+    }
+
+    function updateBlock1Chips() {
+      const used = new Set(BLOCK1_DATA.map(q => state.answers[q.id]).filter(Boolean));
+      BLOCK1_WORDS.forEach(w => {
+        const chip = document.getElementById(`b1-chip-${slugify(w)}`);
+        if (chip) chip.classList.toggle("used", used.has(w));
+      });
+    }
+
+    function renderBlock2() {
+      const bankEl = document.getElementById("b2-bank");
+      bankEl.innerHTML = BLOCK2_WORDS.map(w => `<span class="word-chip" id="b2-chip-${slugify(w)}">${w}</span>`).join("");
+
+      const listEl = document.getElementById("b2-questions");
+      listEl.innerHTML = BLOCK2_DATA.map((item, idx) => `
+        <div class="q-item" id="card-${item.id}">
+          <div class="q-text">
+            <span class="q-num">${idx + 1}.</span> ${item.before}
+            <select class="q-select inline-select" id="input-${item.id}" aria-label="Pregunta ${idx + 1}">
+              <option value="">-- select --</option>
+              ${BLOCK2_WORDS.map(w => `<option value="${w}">${w}</option>`).join("")}
+            </select>
+            <span class="print-line-inline"></span>
+            ${item.after}
+          </div>
+          <div class="feedback-msg" id="fb-${item.id}"></div>
+        </div>
+      `).join("");
+
+      BLOCK2_DATA.forEach(item => {
+        const sel = document.getElementById(`input-${item.id}`);
+        sel.addEventListener("change", () => {
+          state.answers[item.id] = sel.value;
+          clearQuestionEvaluation(item.id, 2);
+          updateBlock2Chips();
+          updateProgress();
+        });
+      });
+    }
+
+    function updateBlock2Chips() {
+      const used = new Set(BLOCK2_DATA.map(q => state.answers[q.id]).filter(Boolean));
+      BLOCK2_WORDS.forEach(w => {
+        const chip = document.getElementById(`b2-chip-${slugify(w)}`);
+        if (chip) chip.classList.toggle("used", used.has(w));
+      });
+    }
+
+    function renderBlock3() {
+      const bankEl = document.getElementById("b3-bank");
+      bankEl.innerHTML = BLOCK3_WORDS.map(w => `
+        <button type="button" class="word-chip clickable" onclick="insertB3Word('${w}')">${w}</button>
+      `).join("");
+
+      const listEl = document.getElementById("b3-questions");
+      listEl.innerHTML = BLOCK3_DATA.map((item, idx) => `
+        <div class="q-item" id="card-${item.id}">
+          <div class="q-row">
+            <div class="q-text">
+              <span class="q-num">${idx + 1}.</span> ${item.sentence}
+              <span class="print-line-inline"></span>
+            </div>
+            <input type="text" class="inline-input" id="input-${item.id}"
+              placeholder="Write correct word..." autocomplete="off" spellcheck="false"
+              aria-label="Corrección ${idx + 1}" />
+          </div>
+          <div class="feedback-msg" id="fb-${item.id}"></div>
+        </div>
+      `).join("");
+
+      BLOCK3_DATA.forEach(item => {
+        const inp = document.getElementById(`input-${item.id}`);
+        inp.addEventListener("focus", () => {
+          state.activeB3InputId = item.id;
+        });
+        inp.addEventListener("input", () => {
+          state.answers[item.id] = inp.value;
+          clearQuestionEvaluation(item.id, 3);
+          updateProgress();
+        });
+      });
+    }
+
+    function insertB3Word(word) {
+      const targetId = state.activeB3InputId || "b3_1";
+      const inp = document.getElementById(`input-${targetId}`);
+      if (!inp) return;
+      inp.value = word;
+      state.answers[targetId] = word;
+      clearQuestionEvaluation(targetId, 3);
+      updateProgress();
+
+      const nextEmpty = BLOCK3_DATA.find(q => !normalizeBasic(state.answers[q.id]));
+      if (nextEmpty) {
+        state.activeB3InputId = nextEmpty.id;
+      }
+    }
+
+    function renderBlock4() {
+      const container = document.getElementById("b4-container");
+
+      let html = `<div class="sub-heading">Part A · Choose the correct relative pronoun (4 pts)</div><div class="question-list">`;
+      BLOCK4_DATA.partA.forEach((item, idx) => {
+        html += `
+          <div class="q-item" id="card-${item.id}">
+            <div class="q-text">
+              <span class="q-num">${idx + 1}.</span> ${item.text}
+              <span class="print-line-inline"></span>
+              <span class="choice-options-print">(${item.options.join(" / ")})</span>
+            </div>
+            <div class="choice-group" id="choices-${item.id}">
+              ${item.options.map(opt => `
+                <button type="button" class="choice-pill" data-qid="${item.id}" data-val="${opt}"
+                  onclick="selectB4Choice('${item.id}', '${opt}')">${opt}</button>
+              `).join("")}
+            </div>
+            <div class="feedback-msg" id="fb-${item.id}"></div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+
+      html += `<div class="sub-heading">Part B · Correct the mistake in bold (4 pts)</div><div class="question-list">`;
+      BLOCK4_DATA.partB.forEach((item, idx) => {
+        html += `
+          <div class="q-item" id="card-${item.id}">
+            <div class="q-row">
+              <div class="q-text">
+                <span class="q-num">${idx + 5}.</span> ${item.text}
+                <span class="print-line-inline"></span>
+              </div>
+              <input type="text" class="inline-input" id="input-${item.id}"
+                placeholder="who / which / whose / where / when" autocomplete="off" spellcheck="false"
+                aria-label="Pregunta ${idx + 5}" />
+            </div>
+            <div class="feedback-msg" id="fb-${item.id}"></div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+
+      html += `<div class="sub-heading">Part C · Combine the sentences using the pronoun in brackets (8 pts · pay attention to commas!)</div><div class="question-list">`;
+      BLOCK4_DATA.partC.forEach((item, idx) => {
+        html += `
+          <div class="q-item" id="card-${item.id}">
+            <div class="q-text"><span class="q-num">${idx + 9}.</span> ${item.prompt}</div>
+            <input type="text" class="full-input" id="input-${item.id}"
+              placeholder="Write combined sentence here..." autocomplete="off" spellcheck="false"
+              aria-label="Pregunta ${idx + 9}" />
+            <div class="print-line-full"></div>
+            <div class="print-line-full-double"></div>
+            <div class="feedback-msg" id="fb-${item.id}"></div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+
+      container.innerHTML = html;
+
+      [...BLOCK4_DATA.partB, ...BLOCK4_DATA.partC].forEach(item => {
+        const inp = document.getElementById(`input-${item.id}`);
+        inp.addEventListener("input", () => {
+          state.answers[item.id] = inp.value;
+          clearQuestionEvaluation(item.id, 4);
+          updateProgress();
+        });
+      });
+    }
+
+    function selectB4Choice(qid, val) {
+      state.answers[qid] = val;
+      const group = document.getElementById(`choices-${qid}`);
+      group.querySelectorAll(".choice-pill").forEach(btn => {
+        btn.classList.toggle("selected", btn.dataset.val === val);
+      });
+      clearQuestionEvaluation(qid, 4);
+      updateProgress();
+    }
+
+    function renderBlock5() {
+      const makeSelect = (num) => {
+        const id = `b5_${num}`;
+        return `<span class="cloze-gap-num">(${num})</span><select class="cloze-select" id="input-${id}" aria-label="Gap ${num}">
+          <option value="">--</option>
+          ${RELATIVE_OPTIONS.map(o => `<option value="${o}">${o}</option>`).join("")}
+        </select><span class="print-line-inline" style="min-width:70pt;"></span>`;
+      };
+
+      const passageEl = document.getElementById("b5-passage");
+      passageEl.innerHTML = `
+        <p>
+          Last summer, I joined an international youth culinary project called <em>Flavours Without Borders</em>,
+          ${makeSelect(1)} brings teenagers from twelve countries together to share traditional recipes.
+          The event took place in Rotterdam, ${makeSelect(2)} people from over a hundred nationalities live and work side by side.
+        </p>
+        <p>
+          On the first morning, ${makeSelect(3)} everyone was still feeling a little shy, our coordinators organised a
+          spice-tasting game to break the ice. I was paired with Nadia, a student from Morocco ${makeSelect(4)}
+          grandmother runs a famous bakery in Marrakech. Together, we prepared a dish ${makeSelect(5)} combined
+          Spanish saffron with North African herbs.
+        </p>
+        <p>
+          Our mentor was Chef Mateo, ${makeSelect(6)} has worked as an expat chef on four different continents.
+          He showed us kitchens ${makeSelect(7)} young cooks experiment with local ingredients to create new flavours.
+          By Friday, ${makeSelect(8)} we hosted a dinner for local families, our team felt like lifelong friends.
+          Everyone ${makeSelect(9)} tasted our menu agreed that food is a universal language ${makeSelect(10)}
+          helps us understand other cultures.
+        </p>
+      `;
+
+      BLOCK5_GAPS.forEach(gap => {
+        const sel = document.getElementById(`input-${gap.id}`);
+        sel.addEventListener("change", () => {
+          state.answers[gap.id] = sel.value;
+          sel.classList.remove("is-correct", "is-wrong");
+          clearQuestionEvaluation(gap.id, 5);
+          updateProgress();
+        });
+      });
+    }
+
+    // =========================================================================
+    // EVALUATION RULES & COMPARISON
+    // =========================================================================
+
+    function normalizeBasic(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .trim()
+        .replace(/\s+/g, " ")
+        .toLowerCase();
+    }
+
+    function normalizeSentence(str) {
+      return normalizeBasic(str)
+        .replace(/\s+([,.;!?])/g, "$1")
+        .replace(/,\s*/g, ", ")
+        .replace(/[.!?]+$/g, "")
+        .trim();
+    }
+
+    function stripCommas(str) {
+      return str.replace(/,/g, "").replace(/\s+/g, " ").trim();
+    }
+
+    function clearQuestionEvaluation(qid, blockNum) {
+      delete state.evaluations[qid];
+      const card = document.getElementById(`card-${qid}`);
+      if (card) card.classList.remove("is-correct", "is-partial", "is-wrong");
+      const fb = document.getElementById(`fb-${qid}`);
+      if (fb) {
+        fb.className = "feedback-msg";
+        fb.textContent = "";
+      }
+      const banner = document.getElementById(`b${blockNum}-banner`);
+      if (banner) banner.classList.remove("show");
+    }
+
+    function evaluateQuestion(qid) {
+      // Block 1
+      const b1 = BLOCK1_DATA.find(q => q.id === qid);
+      if (b1) {
+        const val = normalizeBasic(state.answers[qid]);
+        if (!val) return { status: "wrong", score: 0, max: 1, message: `Sin responder. Respuesta correcta: <strong>${b1.ans}</strong>.` };
+        if (val === b1.ans) return { status: "correct", score: 1, max: 1, message: "✓ ¡Correcto!" };
+        return { status: "wrong", score: 0, max: 1, message: `✗ Incorrecto. Respuesta correcta: <strong>${b1.ans}</strong>. (${b1.hint})` };
+      }
+
+      // Block 2
+      const b2 = BLOCK2_DATA.find(q => q.id === qid);
+      if (b2) {
+        const val = normalizeBasic(state.answers[qid]);
+        if (!val) return { status: "wrong", score: 0, max: 1, message: `Sin responder. Respuesta correcta: <strong>${b2.ans}</strong>.` };
+        if (val === b2.ans) return { status: "correct", score: 1, max: 1, message: `✓ ¡Correcto! ${b2.explain}` };
+        return { status: "wrong", score: 0, max: 1, message: `✗ Incorrecto. Respuesta correcta: <strong>${b2.ans}</strong>. ${b2.explain}` };
+      }
+
+      // Block 3
+      const b3 = BLOCK3_DATA.find(q => q.id === qid);
+      if (b3) {
+        const val = normalizeBasic(state.answers[qid]);
+        if (!val) return { status: "wrong", score: 0, max: 1, message: `Sin responder. En lugar de <em>${b3.wrong}</em>, la palabra correcta es <strong>${b3.ans}</strong>.` };
+        if (val === b3.ans) return { status: "correct", score: 1, max: 1, message: `✓ ¡Correcto! ${b3.explain}` };
+        return { status: "wrong", score: 0, max: 1, message: `✗ Has escrito «${escapeHtml(state.answers[qid])}». La palabra adecuada es <strong>${b3.ans}</strong>. ${b3.explain}` };
+      }
+
+      // Block 4A
+      const b4a = BLOCK4_DATA.partA.find(q => q.id === qid);
+      if (b4a) {
+        const val = normalizeBasic(state.answers[qid]);
+        if (!val) return { status: "wrong", score: 0, max: 1, message: `Sin responder. Respuesta correcta: <strong>${b4a.ans}</strong>.` };
+        if (val === b4a.ans) return { status: "correct", score: 1, max: 1, message: `✓ ¡Correcto! ${b4a.explain}` };
+        return { status: "wrong", score: 0, max: 1, message: `✗ Incorrecto. Respuesta correcta: <strong>${b4a.ans}</strong>. ${b4a.explain}` };
+      }
+
+      // Block 4B
+      const b4b = BLOCK4_DATA.partB.find(q => q.id === qid);
+      if (b4b) {
+        const val = normalizeBasic(state.answers[qid]);
+        if (!val) return { status: "wrong", score: 0, max: 1, message: `Sin responder. Respuesta correcta: <strong>${b4b.ans}</strong>.` };
+        if (val === b4b.ans) return { status: "correct", score: 1, max: 1, message: `✓ ¡Correcto! ${b4b.explain}` };
+        return { status: "wrong", score: 0, max: 1, message: `✗ Has escrito «${escapeHtml(state.answers[qid])}». La forma correcta es <strong>${b4b.ans}</strong>. ${b4b.explain}` };
+      }
+
+      // Block 4C (Sentence joining — 2 pts each, smart comma detection)
+      const b4c = BLOCK4_DATA.partC.find(q => q.id === qid);
+      if (b4c) {
+        const raw = state.answers[qid] || "";
+        const normUser = normalizeSentence(raw);
+        if (!normUser) {
+          return {
+            status: "wrong",
+            score: 0,
+            max: 2,
+            message: `Sin responder. Solución modelo: <strong>${b4c.model}</strong>`
+          };
+        }
+
+        const normTargets = b4c.answers.map(a => normalizeSentence(a));
+        if (normTargets.includes(normUser)) {
+          return {
+            status: "correct",
+            score: 2,
+            max: 2,
+            message: `✓ ¡Excelente! ${b4c.explain}`
+          };
+        }
+
+        const userNoCommas = stripCommas(normUser);
+        const targetsNoCommas = normTargets.map(t => stripCommas(t));
+        if (targetsNoCommas.includes(userNoCommas)) {
+          if (b4c.type === "non-defining") {
+            return {
+              status: "partial",
+              score: 1,
+              max: 2,
+              message: `⚠ ¡Casi perfecto (1/2 pts)! La estructura y el pronombre son correctos, pero falta poner <strong>comas</strong> alrededor de la oración explicativa.<br>Solución correcta: <strong>${b4c.model}</strong>`
+            };
+          } else {
+            return {
+              status: "partial",
+              score: 1,
+              max: 2,
+              message: `⚠ ¡Casi perfecto (1/2 pts)! La estructura es correcta, pero esta oración es especificativa (<em>defining</em>) y <strong>no lleva comas</strong>.<br>Solución correcta: <strong>${b4c.model}</strong>`
+            };
+          }
+        }
+
+        let specificTip = "";
+        if (/\b(her|there|he|it)\b/.test(userNoCommas)) {
+          specificTip = " Revisa que hayas eliminado el pronombre repetido (<em>her, there, he, it</em>).";
+        }
+        return {
+          status: "wrong",
+          score: 0,
+          max: 2,
+          message: `✗ Revisa tu oración.${specificTip}<br>Solución modelo: <strong>${b4c.model}</strong><br><span style="font-size:0.84rem">${b4c.explain}</span>`
+        };
+      }
+
+      // Block 5
+      const b5 = BLOCK5_GAPS.find(q => q.id === qid);
+      if (b5) {
+        const val = normalizeBasic(state.answers[qid]);
+        if (!val) return { status: "wrong", score: 0, max: 1, message: `Sin responder. ${b5.explain}` };
+        if (val === b5.ans) return { status: "correct", score: 1, max: 1, message: `✓ ${b5.explain}` };
+        return { status: "wrong", score: 0, max: 1, message: `✗ Elegido «${escapeHtml(state.answers[qid])}». Correcto: <strong>${b5.ans}</strong>` };
+      }
+
+      return null;
+    }
+
+    function getBlockQuestionIds(blockNum) {
+      if (blockNum === 1) return BLOCK1_DATA.map(q => q.id);
+      if (blockNum === 2) return BLOCK2_DATA.map(q => q.id);
+      if (blockNum === 3) return BLOCK3_DATA.map(q => q.id);
+      if (blockNum === 4) return [
+        ...BLOCK4_DATA.partA.map(q => q.id),
+        ...BLOCK4_DATA.partB.map(q => q.id),
+        ...BLOCK4_DATA.partC.map(q => q.id)
+      ];
+      if (blockNum === 5) return BLOCK5_GAPS.map(q => q.id);
+      return [];
+    }
+
+    function checkBlock(blockNum) {
+      const qids = getBlockQuestionIds(blockNum);
+      let blockScore = 0;
+      let blockMax = 0;
+      let hasErrors = false;
+
+      qids.forEach(qid => {
+        const res = evaluateQuestion(qid);
+        state.evaluations[qid] = res;
+        blockScore += res.score;
+        blockMax += res.max;
+        if (res.status !== "correct") hasErrors = true;
+
+        if (blockNum === 5) {
+          const sel = document.getElementById(`input-${qid}`);
+          if (sel) {
+            sel.classList.remove("is-correct", "is-wrong");
+            sel.classList.add(res.status === "correct" ? "is-correct" : "is-wrong");
+          }
+        } else {
+          const card = document.getElementById(`card-${qid}`);
+          const fb = document.getElementById(`fb-${qid}`);
+          if (card) {
+            card.classList.remove("is-correct", "is-partial", "is-wrong");
+            card.classList.add(
+              res.status === "correct" ? "is-correct" :
+              res.status === "partial" ? "is-partial" : "is-wrong"
+            );
+          }
+          if (fb) {
+            fb.className = "feedback-msg show " + (
+              res.status === "correct" ? "ok" :
+              res.status === "partial" ? "warn" : "err"
+            );
+            fb.innerHTML = res.message;
+          }
+        }
+      });
+
+      if (blockNum === 5) {
+        const fbList = document.getElementById("b5-feedback-list");
+        fbList.innerHTML = qids.map(qid => {
+          const res = state.evaluations[qid];
+          const cls = res.status === "correct" ? "is-correct" : "is-wrong";
+          const fbCls = res.status === "correct" ? "ok" : "err";
+          return `
+            <div class="q-item ${cls}" style="padding: 10px 14px;">
+              <div class="feedback-msg show ${fbCls}" style="margin-top:0;">${res.message}</div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      state.blockChecked[blockNum] = true;
+
+      const banner = document.getElementById(`b${blockNum}-banner`);
+      const retryBtn = document.getElementById(`b${blockNum}-retry`);
+      banner.className = "block-banner show " + (!hasErrors ? "good" : "mixed");
+      banner.textContent = !hasErrors
+        ? `¡Bloque ${blockNum} perfecto! Has conseguido ${blockScore} / ${blockMax} puntos.`
+        : `Resultado del Bloque ${blockNum}: ${blockScore} / ${blockMax} puntos. Revisa las soluciones marcadas y pulsa «Reintentar incorrectas» si quieres volver a probar.`;
+
+      if (retryBtn) retryBtn.classList.toggle("hidden", !hasErrors);
+
+      const tab = document.getElementById(`tab-block-${blockNum}`);
+      if (tab) tab.classList.toggle("done-ok", !hasErrors);
+
+      updateProgress();
+    }
+
+    function retryBlock(blockNum) {
+      const qids = getBlockQuestionIds(blockNum);
+      qids.forEach(qid => {
+        const ev = state.evaluations[qid];
+        if (!ev || ev.status !== "correct") {
+          delete state.answers[qid];
+          delete state.evaluations[qid];
+
+          const inp = document.getElementById(`input-${qid}`);
+          if (inp) {
+            inp.value = "";
+            inp.classList.remove("is-correct", "is-wrong");
+          }
+
+          const choiceGroup = document.getElementById(`choices-${qid}`);
+          if (choiceGroup) {
+            choiceGroup.querySelectorAll(".choice-pill").forEach(b => b.classList.remove("selected"));
+          }
+
+          clearQuestionEvaluation(qid, blockNum);
+        }
+      });
+
+      if (blockNum === 1) updateBlock1Chips();
+      if (blockNum === 2) updateBlock2Chips();
+      if (blockNum === 5) document.getElementById("b5-feedback-list").innerHTML = "";
+
+      const retryBtn = document.getElementById(`b${blockNum}-retry`);
+      if (retryBtn) retryBtn.classList.add("hidden");
+
+      const tab = document.getElementById(`tab-block-${blockNum}`);
+      if (tab) tab.classList.remove("done-ok");
+
+      updateProgress();
+    }
+
+    // =========================================================================
+    // NAVIGATION & PROGRESS
+    // =========================================================================
+
+    function setupNavigation() {
+      document.getElementById("start-btn").addEventListener("click", () => {
+        const rawName = document.getElementById("student-name-input").value.trim();
+        state.studentName = rawName;
+        if (rawName) {
+          document.getElementById("header-student-name").textContent = `· ${rawName}`;
+        }
+        document.getElementById("top-bar").classList.remove("hidden");
+        startTimer();
+        goToView("block-1");
+      });
+
+      document.querySelectorAll(".nav-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+          goToView(tab.dataset.target);
+        });
+      });
+
+      document.getElementById("timer-toggle-btn").addEventListener("click", toggleTimer);
+    }
+
+    function goToView(viewId) {
+      state.currentView = viewId;
+      const views = ["welcome-screen", "block-1", "block-2", "block-3", "block-4", "block-5", "results-screen"];
+      views.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle("hidden", id !== viewId);
+      });
+
+      document.querySelectorAll(".nav-tab").forEach(tab => {
+        tab.classList.toggle("active", tab.dataset.target === viewId);
+      });
+
+      if (viewId === "results-screen") {
+        renderResults();
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function updateProgress() {
+      let answeredCount = 0;
+      for (let b = 1; b <= 5; b++) {
+        getBlockQuestionIds(b).forEach(qid => {
+          if (normalizeBasic(state.answers[qid])) answeredCount++;
+        });
+      }
+      const pct = Math.round((answeredCount / TOTAL_QUESTIONS) * 100);
+      document.getElementById("progress-fill").style.width = `${pct}%`;
+      document.getElementById("progress-label").textContent = `${answeredCount} / ${TOTAL_QUESTIONS} (${pct}%)`;
+    }
+
+    function renderResults() {
+      const blocksMeta = [
+        { num: 1, title: "Bloque 1 · Definiciones", time: "5 min", target: "block-1" },
+        { num: 2, title: "Bloque 2 · Vocabulario en contexto", time: "7 min", target: "block-2" },
+        { num: 3, title: "Bloque 3 · Corregir vocabulario", time: "6 min", target: "block-3" },
+        { num: 4, title: "Bloque 4 · Relative Clauses", time: "12 min", target: "block-4" },
+        { num: 5, title: "Bloque 5 · Texto con relativos", time: "7 min", target: "block-5" }
+      ];
+
+      let totalScore = 0;
+      const tbody = document.getElementById("results-tbody");
+
+      tbody.innerHTML = blocksMeta.map(b => {
+        const qids = getBlockQuestionIds(b.num);
+        let bScore = 0;
+        let bMax = 0;
+        let answeredInBlock = 0;
+
+        qids.forEach(qid => {
+          const hasAns = Boolean(normalizeBasic(state.answers[qid]));
+          if (hasAns) answeredInBlock++;
+          const ev = state.evaluations[qid] || (hasAns ? evaluateQuestion(qid) : { status: "pending", score: 0, max: qid.startsWith("b4_") && parseInt(qid.split("_")[1], 10) >= 9 ? 2 : 1 });
+          bScore += ev.score;
+          bMax += ev.max;
+        });
+
+        totalScore += bScore;
+
+        let badgeHtml = `<span class="status-badge pending">Sin responder</span>`;
+        if (answeredInBlock > 0 && bScore === bMax) {
+          badgeHtml = `<span class="status-badge ok">Completado (100%)</span>`;
+        } else if (answeredInBlock > 0) {
+          badgeHtml = `<span class="status-badge warn">Revisar fallos</span>`;
+        }
+
+        return `
+          <tr>
+            <td><strong>${b.title}</strong></td>
+            <td>${b.time}</td>
+            <td>${badgeHtml}</td>
+            <td><strong>${bScore} / ${bMax}</strong> pts</td>
+            <td>
+              <button type="button" class="timer-btn" onclick="goToView('${b.target}')">
+                ${bScore === bMax ? "Ver bloque" : "Revisar / Reintentar"}
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join("");
+
+      const grade10 = ((totalScore / MAX_POINTS) * 10).toFixed(1).replace(".", ",");
+      const pct = Math.round((totalScore / MAX_POINTS) * 100);
+
+      document.getElementById("results-student").textContent = state.studentName
+        ? `Estudiante: ${state.studentName}`
+        : "Resumen individual de la práctica";
+      document.getElementById("results-grade").textContent = `${grade10} / 10`;
+      document.getElementById("results-points").textContent = `${totalScore} / ${MAX_POINTS} puntos · ${pct}% de acierto`;
+
+      const elapsedSec = Math.max(0, 40 * 60 - state.timerSeconds);
+      const mins = Math.floor(elapsedSec / 60);
+      const secs = elapsedSec % 60;
+      document.getElementById("results-time").textContent = `Tiempo empleado: ${mins} min ${String(secs).padStart(2, "0")} s`;
+    }
+
+    function resetAll() {
+      if (!confirm("¿Seguro que quieres borrar todas tus respuestas y reiniciar la práctica?")) return;
+      state.answers = {};
+      state.evaluations = {};
+      state.blockChecked = { 1: false, 2: false, 3: false, 4: false, 5: false };
+      state.timerSeconds = 40 * 60;
+      state.timeUpNotified = false;
+      document.getElementById("timer-box").classList.remove("time-up");
+      updateTimerDisplay();
+
+      for (let b = 1; b <= 5; b++) {
+        const banner = document.getElementById(`b${b}-banner`);
+        if (banner) banner.classList.remove("show");
+        const retry = document.getElementById(`b${b}-retry`);
+        if (retry) retry.classList.add("hidden");
+        const tab = document.getElementById(`tab-block-${b}`);
+        if (tab) tab.classList.remove("done-ok");
+      }
+
+      document.getElementById("b5-feedback-list").innerHTML = "";
+      renderBlock1();
+      renderBlock2();
+      renderBlock3();
+      renderBlock4();
+      renderBlock5();
+      updateProgress();
+      goToView("block-1");
+    }
+
+    // =========================================================================
+    // TIMER LOGIC
+    // =========================================================================
+
+    function startTimer() {
+      if (state.timerInterval) clearInterval(state.timerInterval);
+      state.timerRunning = true;
+      document.getElementById("timer-toggle-btn").textContent = "Pausar";
+      state.timerInterval = setInterval(() => {
+        if (!state.timerRunning) return;
+        if (state.timerSeconds > 0) {
+          state.timerSeconds--;
+          updateTimerDisplay();
+        } else if (!state.timeUpNotified) {
+          state.timeUpNotified = true;
+          document.getElementById("timer-box").classList.add("time-up");
+          document.getElementById("timer-display").textContent = "00:00 · Tiempo cumplido";
+        }
+      }, 1000);
+    }
+
+    function toggleTimer() {
+      state.timerRunning = !state.timerRunning;
+      document.getElementById("timer-toggle-btn").textContent = state.timerRunning ? "Pausar" : "Reanudar";
+    }
+
+    function updateTimerDisplay() {
+      const m = Math.floor(state.timerSeconds / 60);
+      const s = state.timerSeconds % 60;
+      document.getElementById("timer-display").textContent =
+        `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    }
+
+    // =========================================================================
+    // UTILS
+    // =========================================================================
+
+    function slugify(str) {
+      return str.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    // Initialize application on load
+    initApp();
+  </script>
+</body>
+</html>
